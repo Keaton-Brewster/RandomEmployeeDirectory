@@ -1,11 +1,13 @@
 import React from 'react';
-import { Navbar } from "react-bootstrap";
+import GlobalContext from "./state_managment/GlobalState"
+// import { Navbar } from "react-bootstrap";
+import Table from './components/Table';
 
 const App = () => {
     return (
-        <Navbar>
-            <Navbar.Brand>Employee Directory</Navbar.Brand>
-        </Navbar>
+        <GlobalContext>
+            <Table />
+        </GlobalContext>
     );
 }
 
