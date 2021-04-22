@@ -1,15 +1,14 @@
 import React from 'react';
+import Provider from './state_managment/GlobalState';
 import Table from './components/Table'
 import Navbar from './components/Navbar'
 
 const App = () => {
     return (
-        <>
+        <Provider>
             <Navbar />
-            <div className="m-5 p-5">
-                <Table />
-            </div>
-        </>
+            <Table />
+        </Provider>
     );
 }
 

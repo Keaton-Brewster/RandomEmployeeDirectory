@@ -1,0 +1,114 @@
+[
+    {
+        "gender": "male",
+        "name": {
+            "title": "Mr",
+            "first": "Edwin",
+            "last": "Scott"
+        },
+        "location": {
+            "street": {
+                "number": 5030,
+                "name": "Thornridge Cir"
+            },
+            "city": "Port Macquarie",
+            "state": "Northern Territory",
+            "country": "Australia",
+            "postcode": 1285,
+            "coordinates": {
+                "latitude": "-85.4507",
+                "longitude": "-125.2926"
+            },
+            "timezone": {
+                "offset": "+3:30",
+                "description": "Tehran"
+            }
+        },
+        "email": "edwin.scott@example.com",
+        "login": {
+            "uuid": "4d98da49-a592-45c6-9866-29c1d4969f99",
+            "username": "greengorilla248",
+            "password": "keegan",
+            "salt": "QuKjtUzw",
+            "md5": "a9791c98b45199c3e05bc5b1ce6fa4ba",
+            "sha1": "5bc5c1b29a5302c7f0008d3f81a74876312e46cc",
+            "sha256": "301f842634e4d87c16d1c1a6d995167b3751e4436a40d12544a198818060145e"
+        },
+        "dob": {
+            "date": "1977-06-23T11:23:56.918Z",
+            "age": 44
+        },
+        "registered": {
+            "date": "2016-01-26T05:53:08.419Z",
+            "age": 5
+        },
+        "phone": "08-2646-9660",
+        "cell": "0495-427-329",
+        "id": {
+            "name": "TFN",
+            "value": "299100980"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/9.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/9.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/9.jpg"
+        },
+        "nat": "AU"
+    },
+    {
+        "gender": "male",
+        "name": {
+            "title": "Mr",
+            "first": "Mitchell",
+            "last": "Castillo"
+        },
+        "location": {
+            "street": {
+                "number": 6796,
+                "name": "Fincher Rd"
+            },
+            "city": "Kent",
+            "state": "Georgia",
+            "country": "United States",
+            "postcode": 95431,
+            "coordinates": {
+                "latitude": "-79.9064",
+                "longitude": "145.1481"
+            },
+            "timezone": {
+                "offset": "-11:00",
+                "description": "Midway Island, Samoa"
+            }
+        },
+        "email": "mitchell.castillo@example.com",
+        "login": {
+            "uuid": "963c53f3-fe10-40fe-81f2-b20a472fac0d",
+            "username": "ticklishzebra142",
+            "password": "kitchen",
+            "salt": "NWcYG7E0",
+            "md5": "bebb47f9a0c0c7c821037d6e2400a1b5",
+            "sha1": "7f80d6aca34e696666b817b016da8a30b1d992bb",
+            "sha256": "56692e6fc041dba2e0db7314db1c4863cdb65281c44fa650a55986fad695a64a"
+        },
+        "dob": {
+            "date": "1979-10-08T06:08:21.969Z",
+            "age": 42
+        },
+        "registered": {
+            "date": "2014-05-27T13:50:27.555Z",
+            "age": 7
+        },
+        "phone": "(126)-484-6003",
+        "cell": "(765)-927-5127",
+        "id": {
+            "name": "SSN",
+            "value": "435-89-9303"
+        },
+        "picture": {
+            "large": "https://randomuser.me/api/portraits/men/20.jpg",
+            "medium": "https://randomuser.me/api/portraits/med/men/20.jpg",
+            "thumbnail": "https://randomuser.me/api/portraits/thumb/men/20.jpg"
+        },
+        "nat": "US"
+    }
+]

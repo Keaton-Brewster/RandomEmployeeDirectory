@@ -1,3 +1,5 @@
+import { useContext, useState, useEffect } from 'react';
+import { Context } from '../state_managment/GlobalState';
 const TableBody = ({users}) => {
     return (
         <tbody>
@@ -8,7 +10,7 @@ const TableBody = ({users}) => {
                         <th>{user.name.first} {user.name.last}</th>
                         <th>{user.cell}</th>
                         <th>{user.email}</th>
-                        <th>{user.dob.date}</th>
+                        <th>{new Date(user.dob.date).toString().substr(4, 11)}</th>
                     </tr>
                 )
             })}
