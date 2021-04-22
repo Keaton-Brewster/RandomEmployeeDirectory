@@ -1,11 +1,9 @@
-import React from 'react';
-import { Table } from "react-bootstrap";
-import TableBody from "./TableBody"
-// import axios from "axios";
+import { Table as BootstrapTable } from "react-bootstrap";
+import TableBody from "./TableBody";
 
-const MyTable = () => {
+const Table = () => {
     return (
-        <Table striped bordered hover>
+        <BootstrapTable striped bordered hover>
             <thead>
                 <tr>
                     <th>Photo</th>
@@ -16,9 +14,8 @@ const MyTable = () => {
                 </tr>
             </thead>
             <TableBody />
-        </Table>
+        </BootstrapTable>
     );
-
 }
 
-export default MyTable;
+export default Table;
