@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
-import { Table as BootstrapTable } from 'react-bootstrap';
 import API from "../utils/API"
+import TableHeader from "./TableHeader"
 import TableBody from './TableBody';
 
 const Table = () => {
@@ -16,18 +16,10 @@ const Table = () => {
         }, []);
 
     return (
-        <BootstrapTable striped bordered hover>
-            <thead>
-                <tr>
-                    <th>Photo<span></span></th>
-                    <th>Name</th>
-                    <th>Phone</th>
-                    <th>Email</th>
-                    <th>DOB</th>
-                </tr>
-            </thead>
+        <table className="table">
+            <TableHeader />
             <TableBody users={users}/>
-        </BootstrapTable>
+        </table>
     );
 }
 
