@@ -6,13 +6,13 @@ const TableHeader = ({ sort, onSortChange, sortTypes }) => {
     return (
         <thead className="bg-dark">
             <tr className="text-light">
-                <th className="pb-3"> Photo </th>
+                <th> Photo </th>
                 <th>Name
                 <button onClick={() => onSortChange('name')}>
                         <FontAwesomeIcon className="fa" icon={sortTypes[sort.name]} />
                     </button>
                 </th>
-                <th className="pb-3">Phone</th>
+                <th>Phone</th>
                 <th>Email</th>
                 <th>DOB
                 <button onClick={() => onSortChange('dob')}>
