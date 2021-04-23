@@ -9,10 +9,7 @@ import Reducer from './Reducer'
 // with users, and data, seamlessly and elegantly
 
 
-const initialState = { 
-    rootUsers: [],
-    users: []
-};
+const initialState = { users: [] };
 
 const Store = ({ children }) => {
     const [state, dispatch] = useReducer(Reducer, initialState);
