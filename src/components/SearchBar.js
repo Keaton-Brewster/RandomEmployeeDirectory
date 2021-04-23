@@ -4,7 +4,7 @@ const SearchBar = ({ handleInputChange }) => {
             <input
                 className="form-control"
                 type="search"
-                placeholder="Search"
+                placeholder="Search by name (first or last)"
                 onChange={handleInputChange}
             />
         </div>
