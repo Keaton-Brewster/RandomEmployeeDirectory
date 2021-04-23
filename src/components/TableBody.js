@@ -1,5 +1,4 @@
-import { useContext, useState, useEffect } from 'react';
-import { Context } from '../state_managment/GlobalState';
+// this is just the component that takes in the user state from the table component, and displays the users accordinly
 const TableBody = ({users}) => {
     return (
         <tbody>

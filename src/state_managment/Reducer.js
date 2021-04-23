@@ -5,7 +5,7 @@ function Reducer(state, action) {
                 users: action.payload
             }
         default:
-            throw new Error();
+            throw new Error('Unexpeceted error thrown in src/state_managment/Reducer.js');
     }
 }
 

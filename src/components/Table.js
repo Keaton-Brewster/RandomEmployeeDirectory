@@ -9,14 +9,17 @@ import { faSortDown, faSortUp, faSort } from '@fortawesome/free-solid-svg-icons'
 import useSort from '../utils/useSort';
 
 const Table = () => {
+    // Using context to store the root list of user data, so that we always have an immutable source to fall back on
     const [state, dispatch] = useContext(Context);
+    // Then setting up the component state for users, this is what we will use to render the users data
     const [users, setUsers] = useState([]);
+    // State variables for the value of the search box
     const [search, setSearch] = useState(undefined);
+    // State variable for the sort buttons
     const [sort, setSort] = useState({
         name: 'default',
         dob: 'default'
     });
-
     // Initially calling the api to set the root state of the users
     useEffect(
         () => {
@@ -26,35 +29,27 @@ const Table = () => {
                 })
                 .catch(err => console.log(err));
         }, [dispatch]);
-
-    // using local state within the table to feed the users to the table body. 
+    // Then seting the local state for rendering
     useEffect(() => {
         setUsers(state.users)
     }, [state])
 
-    //  need an effect, and hook to handle the change of state for filtering results alphabetically, or by DOB
+    // setting up a variable to control the icons displayed next to the column you are sorting by
     const sortTypes = {
-        up: {
-            icon: faSortUp,
-            fn: (a, b) => a.net_worth - b.net_worth
-        },
-        down: {
-            icon: faSortDown,
-            fn: (a, b) => b.net_worth - a.net_worth
-        },
-        default: {
-            icon: faSort,
-            fn: (a, b) => a
-        }
+        up: faSortUp,
+        down: faSortDown,
+        default: faSort,
     }
 
+    // Function that handles the state of the search box. 
     const handleInputChange = event => {
         setSearch(event.target.value);
     };
 
+    // Function that handles the toggling of the column sorting
     const onSortChange = (type) => {
         let nextSort;
-
+        // Check first to see which value the user is sorting for and then if/else to set the value of the sort icon/state
         switch (type) {
             case 'name':
                 if (sort.name === 'down') nextSort = 'up';
@@ -79,11 +74,13 @@ const Table = () => {
         }
     }
 
-    // Set up a way to search through the list of 
-    let searchedUsers = useSearch(state.users, search)
-    let sortedUsers = useSort(sort)
+    // setting up the user sets we are going to listen to in our useEffects to display the data you want! 
+    // These are both custom hooks
+    let searchedUsers = useSearch([...state.users], search)
+    let sortedUsers = useSort([...state.users], sort)
 
-    // wait for any changes to the searchedUsers value and update the users being fed to the Table body accordingly
+    // This useEffect handles filtering the array of users based on your search input 
+    // Note that is sets sort to {all: default} so that no weird state issues happen (searching and filtering at the same time)
     useEffect(() => {
         if (!searchedUsers) return;
         setSort({
@@ -93,15 +90,17 @@ const Table = () => {
         setUsers(searchedUsers)
     }, [searchedUsers])
 
-
+    // This useEffect handles the sorting of the users array based on the sort state
+    // Note when both sort values are 'default' sortedUsers comes back undefined, and we fall back on our GlobalState to restore the list to normal
     useEffect(() => {
         if (sortedUsers === undefined) {
             setUsers(state.users);
             return;
-        }
+        } else {
+            setUsers(sortedUsers)
+        };
+    }, [sortedUsers, state.users])
 
-        setUsers(sortedUsers);
-    }, [sort, sortedUsers, state.users])
 
     return (
         <div className="px-5 mx-5">
