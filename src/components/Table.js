@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from 'react'
-import API from "../utils/API"
+import { faSortDown, faSortUp, faSort } from '@fortawesome/free-solid-svg-icons'
+import { Context } from '../state_managment/GlobalState';
 import TableHeader from "./TableHeader"
 import TableBody from './TableBody';
-import { Context } from '../state_managment/GlobalState';
 import SearchBar from './SearchBar';
 import useSearch from '../utils/useSearch';
-import { faSortDown, faSortUp, faSort } from '@fortawesome/free-solid-svg-icons'
 import useSort from '../utils/useSort';
+import API from "../utils/API"
 
 const Table = () => {
     // Using context to store the root list of user data, so that we always have an immutable source to fall back on
