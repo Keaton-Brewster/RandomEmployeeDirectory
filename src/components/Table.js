@@ -21,14 +21,13 @@ const Table = () => {
         dob: 'default'
     });
     // Initially calling the api to set the root state of the users
-    useEffect(
-        () => {
-            API.getUsers()
-                .then(res => {
-                    dispatch({ type: 'set-users', payload: res.data.results });
-                })
-                .catch(err => console.log(err));
-        }, [dispatch]);
+    useEffect(() => {
+        API.getUsers()
+            .then(res => {
+                dispatch({ type: 'set-users', payload: res.data.results });
+            })
+            .catch(err => console.log(err));
+    }, [dispatch]);
     // Then seting the local state for rendering
     useEffect(() => {
         setUsers(state.users)
