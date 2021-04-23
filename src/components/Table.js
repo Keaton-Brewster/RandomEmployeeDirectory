@@ -47,6 +47,7 @@ const Table = () => {
 
     // Function that handles the toggling of the column sorting
     const onSortChange = (type) => {
+        if (search !== undefined) { setSearch(undefined) }
         let nextSort;
         // Check first to see which value the user is sorting for and then if/else to set the value of the sort icon/state
         switch (type) {
@@ -81,7 +82,8 @@ const Table = () => {
     // This useEffect handles filtering the array of users based on your search input 
     // Note that is sets sort to {all: default} so that no weird state issues happen (searching and filtering at the same time)
     useEffect(() => {
-        if (!searchedUsers) return;
+        // Escape early if there is nothing being returned form useSearch yet
+        if (searchedUsers === undefined) return;
         setSort({
             name: 'default',
             dob: 'default'
@@ -92,6 +94,7 @@ const Table = () => {
     // This useEffect handles the sorting of the users array based on the sort state
     // Note when both sort values are 'default' sortedUsers comes back undefined, and we fall back on our GlobalState to restore the list to normal
     useEffect(() => {
+        // Escape early, and reset the list of users if sort is not being used
         if (sortedUsers === undefined) {
             setUsers(state.users);
             return;
