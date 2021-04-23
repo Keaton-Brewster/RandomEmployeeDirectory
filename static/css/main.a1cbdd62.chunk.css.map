@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/components/fontawesome.css"],"names":[],"mappings":"AAAA,IACI,UACJ,CAEA,OACI,eAAgB,CAChB,WACJ","file":"main.a1cbdd62.chunk.css","sourcesContent":[".fa {\n    color: white;\n}\n\nbutton {\n    background: none;\n    border: none;\n}"]}
