@@ -25,14 +25,14 @@ const useSort = (users, sort) => {
         } else if (sort.dob === 'up' && sort.name === 'default') {
             console.log('dob up')
             setSortedUsers(users.sort((a, b) => {
-                if (a.dob.date < b.dob.date) { return -1; }
-                return 1
+                if (a.dob.date < b.dob.date) { return 1; }
+                return -1
             }))
         } else if (sort.dob === 'down' && sort.name === 'default') {
             console.log('dob down')
             setSortedUsers(users.sort((a, b) => {
-                if (a.dob.date < b.dob.date) { return 1; }
-                return -1
+                if (a.dob.date < b.dob.date) { return -1; }
+                return 1
             }))
         }
     }, [sort, setSortedUsers, users])
