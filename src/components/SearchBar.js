@@ -2,11 +2,12 @@ import React, { useEffect, useContext, useState } from 'react';
 import useSearch from '../utils/useSearch';
 import { Context } from '../state_managment/GlobalState';
 
-const SearchBar = ({handleInputChange}) => {
+const SearchBar = ({ handleInputChange }) => {
     return (
-        <div className='float-right pr-5 mr-5'>
+        <div className='float-right pr-3 py-2 mr-3'>
             <input
-                type="text"
+                className="form-control"
+                type="search"
                 placeholder="Search"
                 onChange={handleInputChange}
             />

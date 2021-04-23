@@ -10,13 +10,13 @@ const Table = () => {
     const [state, dispatch] = useContext(Context);
     const [users, setUsers] = useState([]);
     const [search, setSearch] = useState(undefined);
+    const [sort, setSort] = useState();
 
     // Initially calling the api to set the root state of the users
     useEffect(
         () => {
             API.getUsers()
                 .then(res => {
-                    console.log(res.data.results)
                     dispatch({ type: 'set-users', payload: res.data.results });
                 })
                 .catch(err => console.log(err));
@@ -39,6 +39,9 @@ const Table = () => {
 
         setUsers(searchedUsers)
     }, [searchedUsers])
+
+    // Lastly need an effect, and hook to handle the change of state for filtering results alphabetically, or by DOB
+
 
     return (
         <div className="px-5 mx-5">
