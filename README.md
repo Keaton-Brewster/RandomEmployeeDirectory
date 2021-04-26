@@ -5,11 +5,11 @@
 This application is a simple practice and demonstrationg of setting up React, and deploying to gh-pages. 
 
 ## Technologies: 
-React.js
-Node.js
-Axios
-GH-Pages
-Bootstrap
+React.js  
+Node.js  
+Axios  
+GH-Pages  
+Bootstrap  
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
